@@ -9,7 +9,10 @@ public class MyPathNode : SettlersEngine.IPathNode<System.Object>
 	public Boolean IsWall {get; set;}
 	
 	public bool IsWalkable(System.Object unused)
-	{
-		return !IsWall;
+	{		return !IsWall;
 	}
+    public bool isWalkable()
+    {
+        return !IsWall;
+    }
 }

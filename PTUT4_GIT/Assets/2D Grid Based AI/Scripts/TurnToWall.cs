@@ -14,20 +14,15 @@ public class TurnToWall : MonoBehaviour {
 	void OnMouseDown()
 	{
 		string [] splitter = this.gameObject.name.Split (',');
-		if(!isWall)
+		if(!Game.grid[int.Parse(splitter[0]), int.Parse(splitter[1])].IsWall)
 		{
 			Game.addWall(int.Parse(splitter[0]),int.Parse(splitter[1]));
-			isWall = true;
-			this.GetComponent<Renderer>().material.color = Color.red;
-
-
-
+           // Game.grid[int.Parse(splitter[0]), int.Parse(splitter[1])].IsWall = true;
 		}
 		else
 		{
 			Game.removeWall(int.Parse(splitter[0]),int.Parse(splitter[1]));
-			isWall = false;
-			this.GetComponent<Renderer>().material.color = Color.white;
+           // Game.grid[int.Parse(splitter[0]), int.Parse(splitter[1])].IsWall = false;
 		}
 		
 

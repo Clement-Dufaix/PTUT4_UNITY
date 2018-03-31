@@ -6,40 +6,40 @@ public class GameManager : MonoBehaviour {
 
 
 
-	 
-/* 		Author : Saad Khawaja
-	 *  http://www.saadkhawaja.com
-	 * 	http://www.twitter.com/saadskhawaja
 
-	 *     This file is part of Grid Based A* - Tower Defense.
+    /* 		Author : Saad Khawaja
+         *  http://www.saadkhawaja.com
+         * 	http://www.twitter.com/saadskhawaja
 
-		    Grid Based A* - Tower Defense is free software: you can redistribute it and/or modify
-		    it under the terms of the GNU General Public License as published by
-		    the Free Software Foundation, either version 3 of the License, or
-		    (at your option) any later version.
+         *     This file is part of Grid Based A* - Tower Defense.
 
-		    Grid Based A* - Tower Defense is distributed in the hope that it will be useful,
-		    but WITHOUT ANY WARRANTY; without even the implied warranty of
-		    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-		    GNU General Public License for more details.
+                Grid Based A* - Tower Defense is free software: you can redistribute it and/or modify
+                it under the terms of the GNU General Public License as published by
+                the Free Software Foundation, either version 3 of the License, or
+                (at your option) any later version.
+
+                Grid Based A* - Tower Defense is distributed in the hope that it will be useful,
+                but WITHOUT ANY WARRANTY; without even the implied warranty of
+                MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                GNU General Public License for more details.
 
 
-	 * 
-*/ 
+         * 
+    */
 
-	public MyPathNode[,] grid;
-	public GameObject enemy;
-	public GameObject gridBox;
-	public int gridWidth;
-	public int gridHeight;
-	public Sprite carUp;
-	public Sprite carDown;
-	public Sprite carFront;
-	public Sprite carBack;
-	public float gridSize;
-	public GUIStyle lblStyle;
-
-	public static string distanceType;
+    public MyPathNode[,] grid;
+    public GameObject enemy;
+    public GameObject gridBox;
+    public int gridWidth;
+    public int gridHeight;
+    public Sprite carUp;
+    public Sprite carDown;
+    public Sprite carFront;
+    public Sprite carBack;
+    public float gridSize;
+    public GUIStyle lblStyle;
+    public GameObject[,] cases;
+    public static string distanceType;
 	
 
 	//This is what you need to show in the inspector.
@@ -56,7 +56,9 @@ public class GameManager : MonoBehaviour {
 			for (int y = 0; y < gridHeight; y++) {
 				//Boolean isWall = ((y % 2) != 0) && (rnd.Next (0, 10) != 8);
 				Boolean isWall = false;
-				grid [x, y] = new MyPathNode ()
+                
+
+                grid [x, y] = new MyPathNode ()
 				{
 					IsWall = isWall,
 					X = x,
@@ -67,6 +69,10 @@ public class GameManager : MonoBehaviour {
 
 		//instantiate grid gameobjects to display on the scene
 		createGrid ();
+
+        //add instruction
+
+        addWall(2, 2);
 
 		//instantiate enemy object
 		createEnemy ();
@@ -93,15 +99,17 @@ public class GameManager : MonoBehaviour {
 
 	void createGrid()
 	{
-	//Generate Gameobjects of GridBox to show on the Screen
-		for (int i =0; i<gridHeight; i++) {
+        cases = new GameObject[gridWidth, gridHeight];
+        //Generate Gameobjects of GridBox to show on the Screen
+        for (int i =0; i<gridHeight; i++) {
 			for (int j =0; j<gridWidth; j++) {
 				GameObject nobj = (GameObject)GameObject.Instantiate(gridBox);
 				nobj.transform.position = new Vector2(gridBox.transform.position.x + (gridSize*j), gridBox.transform.position.y + (0.87f*i));
 				nobj.name = j+","+i;
 
 				nobj.gameObject.transform.parent = gridBox.transform.parent;
-				nobj.SetActive(true);
+                cases[j, i] = nobj;
+                nobj.SetActive(true);
 
 			}
 		}
@@ -116,17 +124,23 @@ public class GameManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-	
-	}
+       
+
+    }
 	
 	public void addWall (int x, int y)
 	{
-		grid [x, y].IsWall = true;
-	}
+        cases[x,y].GetComponent<Renderer>().material.color = Color.red;
+        
+        grid [x, y].IsWall = true;
+        
+
+    }
 	
 	public void removeWall (int x, int y)
 	{
-		grid [x, y].IsWall = false;
+        cases[x,y].GetComponent<Renderer>().material.color = Color.white;
+        grid [x, y].IsWall = false;
 	}
 
 }
