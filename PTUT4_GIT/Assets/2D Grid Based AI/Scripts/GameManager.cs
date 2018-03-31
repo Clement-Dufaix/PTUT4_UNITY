@@ -47,10 +47,12 @@ public class GameManager : MonoBehaviour {
 
 
 	void Start () {
-	
-	
-		//Generate a grid - nodes according to the specified size
-		grid = new MyPathNode[gridWidth, gridHeight];
+
+        //lock orientation of smartphone
+        Screen.orientation = ScreenOrientation.;
+
+        //Generate a grid - nodes according to the specified size
+        grid = new MyPathNode[gridWidth, gridHeight];
 
 		for (int x = 0; x < gridWidth; x++) {
 			for (int y = 0; y < gridHeight; y++) {
