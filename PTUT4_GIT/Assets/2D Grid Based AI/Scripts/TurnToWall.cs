@@ -17,12 +17,10 @@ public class TurnToWall : MonoBehaviour {
 		if(!Game.grid[int.Parse(splitter[0]), int.Parse(splitter[1])].IsWall)
 		{
 			Game.addWall(int.Parse(splitter[0]),int.Parse(splitter[1]));
-           // Game.grid[int.Parse(splitter[0]), int.Parse(splitter[1])].IsWall = true;
 		}
 		else
 		{
 			Game.removeWall(int.Parse(splitter[0]),int.Parse(splitter[1]));
-           // Game.grid[int.Parse(splitter[0]), int.Parse(splitter[1])].IsWall = false;
 		}
 		
 

@@ -109,10 +109,6 @@ public class EnemyAStar : MonoBehaviour {
 
 
 
-		foreach(GameObject g in GameObject.FindGameObjectsWithTag("GridBox"))
-		{
-			g.GetComponent<Renderer>().material.color = Color.white;
-		}
 
 
 		updatePath();

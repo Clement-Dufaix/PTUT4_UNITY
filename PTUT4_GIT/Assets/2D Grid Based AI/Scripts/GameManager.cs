@@ -72,13 +72,60 @@ public class GameManager : MonoBehaviour {
 
         //add instruction
 
-        addWall(2, 2);
+        
 
 		//instantiate enemy object
 		createEnemy ();
 
-	
-	}
+        addBlockable(0, 3);
+        addBlockable(0, 5);
+        addBlockable(1, 3);
+        addBlockable(2, 3);
+        addBlockable(2, 5);
+        addBlockable(3, 3);
+        addBlockable(3, 5);
+        addBlockable(4, 5);
+        addBlockable(4, 6);
+        addBlockable(4, 7);
+        addBlockable(4, 9);
+        addBlockable(5, 0);
+        addBlockable(5, 1);
+        addBlockable(5, 2);
+        addBlockable(5, 3);
+        addBlockable(5, 5);
+        addBlockable(7, 3);
+        addBlockable(7, 4);
+        addBlockable(7, 5);
+        addBlockable(8, 5);
+        addBlockable(9, 0);
+        addBlockable(9, 2);
+        addBlockable(9, 3);
+        addBlockable(9, 5);
+        addBlockable(9, 6);
+        addBlockable(9, 7);
+        addBlockable(9, 9);
+        addBlockable(10, 3);
+        addBlockable(10, 6);
+        addBlockable(11, 3);
+        addBlockable(11, 4);
+        addBlockable(11, 6);
+        addBlockable(13, 0);
+        addBlockable(13, 2);
+        addBlockable(13, 3);
+        addBlockable(13, 4);
+        addBlockable(13, 0);
+        addBlockable(13, 6);
+        addBlockable(13, 7);
+        addBlockable(13, 9);
+        addBlockable(14, 4);
+        addBlockable(14, 6);
+        addBlockable(15, 4);
+        addBlockable(15, 6);
+        addBlockable(17, 4);
+        addBlockable(17, 6);
+
+
+    }
 
 
 	void OnGUI()
@@ -117,7 +164,7 @@ public class GameManager : MonoBehaviour {
 
 	void createEnemy()
 	{
-		GameObject nb = (GameObject)GameObject.Instantiate (enemy);
+        GameObject nb = (GameObject)GameObject.Instantiate (enemy);
 		nb.SetActive (true);
 	}
 
@@ -125,22 +172,32 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
        
+    }
+
+    public void addBlockable(int x, int y)
+    {
+        grid[x, y].IsBlockable = true;
+        cases[x, y].GetComponent<Renderer>().material.color = Color.black;
+        grid[x, y].IsWall = true;
+    }
+
+    public void addWall(int x, int y)
+    {
+        if (grid[x, y].IsBlockable != true) { 
+        cases[x, y].GetComponent<Renderer>().material.color = Color.red;
+        grid[x, y].IsWall = true;
+    }
+        
 
     }
-	
-	public void addWall (int x, int y)
-	{
-        cases[x,y].GetComponent<Renderer>().material.color = Color.red;
-        
-        grid [x, y].IsWall = true;
-        
 
+    public void removeWall(int x, int y)
+    {
+        if (grid[x, y].IsBlockable != true)
+        {
+            cases[x, y].GetComponent<Renderer>().material.color = Color.white;
+            grid[x, y].IsWall = false;
+        }
     }
-	
-	public void removeWall (int x, int y)
-	{
-        cases[x,y].GetComponent<Renderer>().material.color = Color.white;
-        grid [x, y].IsWall = false;
-	}
 
 }
