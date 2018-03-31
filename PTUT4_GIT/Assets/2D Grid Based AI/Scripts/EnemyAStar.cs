@@ -44,7 +44,7 @@ public class EnemyAStar : MonoBehaviour {
 	private Vector3 startPosition;
 	private Vector3 endPosition;
 	private float t;
-    private float factor;
+	private float factor;
 	private Color myColor;
 
 

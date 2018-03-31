@@ -6,10 +6,11 @@ public class TurnToWall : MonoBehaviour {
 	public GameManager Game;
 	// Use this for initialization
 	void Start () {
+	
 
-    }
+	}
 
-    bool isWall=false;
+	 bool isWall;
 	void OnMouseDown()
 	{
 		string [] splitter = this.gameObject.name.Split (',');

@@ -65,19 +65,12 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 
-        //add default wall
+		//instantiate grid gameobjects to display on the scene
+		createGrid ();
 
-        // 
+		//instantiate enemy object
+		createEnemy ();
 
-        addWall(2, 2);
-
-        //instantiate grid gameobjects to display on the scene
-        createGrid();
-
-
-        //instantiate enemy object
-        createEnemy ();
-        
 	
 	}
 
@@ -118,27 +111,22 @@ public class GameManager : MonoBehaviour {
 	{
 		GameObject nb = (GameObject)GameObject.Instantiate (enemy);
 		nb.SetActive (true);
-        
 	}
 
 
 	// Update is called once per frame
 	void Update () {
-
-    }
+	
+	}
 	
 	public void addWall (int x, int y)
 	{
 		grid [x, y].IsWall = true;
-        grid[x, y].
-
-
-    }
+	}
 	
 	public void removeWall (int x, int y)
 	{
 		grid [x, y].IsWall = false;
-        grid[x, y].GetComponent<Renderer>().material.color = Color.white;
-    }
+	}
 
 }
