@@ -70,13 +70,7 @@ public class GameManager : MonoBehaviour {
 		//instantiate grid gameobjects to display on the scene
 		createGrid ();
 
-        //add instruction
-
-        
-
-		//instantiate enemy object
-		createEnemy ();
-
+        //create base map
         addBlockable(0, 3);
         addBlockable(0, 5);
         addBlockable(1, 3);
@@ -123,6 +117,12 @@ public class GameManager : MonoBehaviour {
         addBlockable(15, 6);
         addBlockable(17, 4);
         addBlockable(17, 6);
+
+
+        //instantiate enemy object
+        createEnemy ();
+
+
 
 
     }
