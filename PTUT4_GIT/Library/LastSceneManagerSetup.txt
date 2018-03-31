@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/2D Grid Based AI/Main.unity
+  isLoaded: 1
+  isActive: 1
