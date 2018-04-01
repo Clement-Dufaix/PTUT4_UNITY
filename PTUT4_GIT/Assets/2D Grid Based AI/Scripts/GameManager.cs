@@ -207,6 +207,7 @@ public class GameManager : MonoBehaviour
     {
         if (grid[x, y].IsBlockable != true)
         {
+            //cases[x, y].GetComponent<SpriteRenderer>().sprite = ;
             cases[x, y].GetComponent<Renderer>().material.color = Color.white;
             grid[x, y].IsWall = false;
         }
