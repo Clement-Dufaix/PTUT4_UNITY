@@ -143,7 +143,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 2408c96f151244869b1377e99e4dae42, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 719100c3c0e8a08489dc56e2c2f16e13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -378,10 +378,10 @@ MonoBehaviour:
   gridBox: {fileID: 454430271}
   gridWidth: 18
   gridHeight: 10
-  carUp: {fileID: 21300000, guid: a1309154e977e48baad1a87848762640, type: 3}
-  carDown: {fileID: 21300000, guid: 0278fe5f4e3684db1b45b320f3b07ee0, type: 3}
-  carFront: {fileID: 21300000, guid: 2408c96f151244869b1377e99e4dae42, type: 3}
-  carBack: {fileID: 21300000, guid: ae9d6652255bb41afbc940659a6e09c9, type: 3}
+  enemyUp: {fileID: 21300000, guid: 52de9d6f231f2a748860511f804d13ac, type: 3}
+  enemyDown: {fileID: 21300000, guid: 176f5794b4284c84aa67b9be167a335f, type: 3}
+  enemyFront: {fileID: 21300000, guid: 719100c3c0e8a08489dc56e2c2f16e13, type: 3}
+  enemyBack: {fileID: 21300000, guid: d5adac186cfb13742bce6c3d02ce3b70, type: 3}
   gridSize: 0.87
   lblStyle:
     m_Name: 

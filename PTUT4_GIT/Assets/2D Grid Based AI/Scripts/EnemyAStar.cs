@@ -264,19 +264,19 @@ public class EnemyAStar : MonoBehaviour {
 		input.y = 0;
 		if (nextNode.X > currentGridPosition.x) {
 			input.x = 1;
-			this.GetComponent<SpriteRenderer>().sprite = Game.carFront;
+			this.GetComponent<SpriteRenderer>().sprite = Game.enemyFront;
 		}
 		if (nextNode.Y > currentGridPosition.y) {
 			input.y = 1;
-			this.GetComponent<SpriteRenderer>().sprite = Game.carUp;
+			this.GetComponent<SpriteRenderer>().sprite = Game.enemyUp;
 		}
 		if (nextNode.Y < currentGridPosition.y) {
 			input.y = -1;
-			this.GetComponent<SpriteRenderer>().sprite = Game.carDown;
+			this.GetComponent<SpriteRenderer>().sprite = Game.enemyDown;
 		}
 		if (nextNode.X < currentGridPosition.x) {
 			input.x = -1;
-			this.GetComponent<SpriteRenderer>().sprite = Game.carBack;
+			this.GetComponent<SpriteRenderer>().sprite = Game.enemyBack;
 		}
 		
 		StartCoroutine (move ());

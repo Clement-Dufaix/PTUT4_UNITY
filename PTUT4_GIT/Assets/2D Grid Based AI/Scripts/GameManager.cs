@@ -32,10 +32,10 @@ public class GameManager : MonoBehaviour {
     public GameObject gridBox;
     public int gridWidth;
     public int gridHeight;
-    public Sprite carUp;
-    public Sprite carDown;
-    public Sprite carFront;
-    public Sprite carBack;
+    public Sprite enemyUp;
+    public Sprite enemyDown;
+    public Sprite enemyFront;
+    public Sprite enemyBack;
     public float gridSize;
     public GUIStyle lblStyle;
     public GameObject[,] cases;
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour {
 	void Start () {
 
         //lock orientation of smartphone
-        Screen.orientation = ScreenOrientation.;
+        Screen.orientation = ScreenOrientation.Landscape;
 
         //Generate a grid - nodes according to the specified size
         grid = new MyPathNode[gridWidth, gridHeight];
