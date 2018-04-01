@@ -216,8 +216,10 @@ public class GameManager : MonoBehaviour
     {
         if (grid[x, y].IsBlockable != true)
         {
-            //cases[x,y].GetComponent<SpriteRenderer>().sprite = towerPrefab;
-            cases[x, y].GetComponent<Renderer>().material.color = Color.red;
+            Sprite nb = (Sprite)Sprite.Instantiate(TowerPrefab);
+            
+            cases[x, y].GetComponent<SpriteRenderer>().sprite= nb;
+            cases[x, y].GetComponent<Renderer>().material.color = Color.black;
             grid[x, y].IsWall = true;
         }
 
