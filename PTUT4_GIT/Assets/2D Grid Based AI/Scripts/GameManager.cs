@@ -80,6 +80,7 @@ public class GameManager : MonoBehaviour
         createGrid();
 
         //create base map
+        
         addBlockable(0, 3);
         addBlockable(0, 5);
         addBlockable(1, 3);
@@ -97,8 +98,9 @@ public class GameManager : MonoBehaviour
         addBlockable(5, 3);
         addBlockable(5, 5);
         addBlockable(7, 3);
-        addBlockable(7, 4);
+        
         addBlockable(7, 5);
+        addBlockable(8, 3);
         addBlockable(8, 5);
         addBlockable(9, 0);
         addBlockable(9, 2);
