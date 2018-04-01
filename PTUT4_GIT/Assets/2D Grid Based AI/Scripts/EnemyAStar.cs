@@ -99,8 +99,8 @@ public class EnemyAStar : MonoBehaviour {
 	
 		myColor = getRandomColor();
 
-		startGridPosition = new gridPosition(0,UnityEngine.Random.Range(0,Game.gridHeight-1));
-		endGridPosition = new gridPosition(Game.gridWidth-1,UnityEngine.Random.Range(0,Game.gridHeight-1));
+		startGridPosition = new gridPosition(0,1);
+		endGridPosition = new gridPosition(17,8);
 		initializePosition ();
 
 
