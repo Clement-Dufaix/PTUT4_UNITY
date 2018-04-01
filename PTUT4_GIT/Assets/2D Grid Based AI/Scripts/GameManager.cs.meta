@@ -1,8 +1,16 @@
 fileFormatVersion: 2
 guid: a80bafa6483f8411e9b66b5001694a8a
+timeCreated: 1522574348
+licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - enemy: {fileID: 106530, guid: 41a5cc74d92cf5347b71cef5e76f527f, type: 2}
+  - gridBox: {instanceID: 0}
+  - enemyUp: {fileID: 21300000, guid: 52de9d6f231f2a748860511f804d13ac, type: 3}
+  - enemyDown: {fileID: 21300000, guid: 176f5794b4284c84aa67b9be167a335f, type: 3}
+  - enemyFront: {fileID: 21300000, guid: 719100c3c0e8a08489dc56e2c2f16e13, type: 3}
+  - enemyBack: {fileID: 21300000, guid: d5adac186cfb13742bce6c3d02ce3b70, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

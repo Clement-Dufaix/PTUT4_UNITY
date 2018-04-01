@@ -96,7 +96,7 @@ GameObject:
   - 212: {fileID: 68414022}
   - 114: {fileID: 68414018}
   m_Layer: 11
-  m_Name: Car
+  m_Name: Enemy
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -375,6 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 68414017}
+  towerPrefab: {fileID: 114804, guid: 5d0c15113b7c2074fa5e80bcafbee520, type: 2}
   gridBox: {fileID: 454430271}
   gridWidth: 18
   gridHeight: 10
