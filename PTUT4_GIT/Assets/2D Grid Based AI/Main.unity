@@ -184,11 +184,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 424048, guid: 5d0c15113b7c2074fa5e80bcafbee520, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 14.22
+      value: 14.29
       objectReference: {fileID: 0}
     - target: {fileID: 424048, guid: 5d0c15113b7c2074fa5e80bcafbee520, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6.48
+      value: 6.44
       objectReference: {fileID: 0}
     - target: {fileID: 424048, guid: 5d0c15113b7c2074fa5e80bcafbee520, type: 2}
       propertyPath: m_LocalPosition.z
@@ -214,12 +214,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 424048, guid: 5d0c15113b7c2074fa5e80bcafbee520, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 2
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 11424230, guid: 5d0c15113b7c2074fa5e80bcafbee520, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5d0c15113b7c2074fa5e80bcafbee520, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &580637229
@@ -648,6 +643,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 68414017}
   player: {fileID: 120988, guid: ab937981ba11b394c96da352e6c7d875, type: 2}
+  tower: {fileID: 114804, guid: 5d0c15113b7c2074fa5e80bcafbee520, type: 2}
   towerPrefab: {fileID: 21300000, guid: efeeb0878e90b2247a4b14a5991c186d, type: 3}
   whiteCase: {fileID: 21300000, guid: b1b6ff1d58967404b9596e0b5f3d5a0c, type: 3}
   gridBox: {fileID: 454430271}

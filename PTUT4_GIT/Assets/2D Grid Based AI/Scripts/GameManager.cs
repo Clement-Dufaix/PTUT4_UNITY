@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public MyPathNode[,] grid;
     public GameObject enemy;
     public GameObject player;
+    public GameObject tower;
     [SerializeField]
     private Sprite towerPrefab;
     public Sprite TowerPrefab { get { return towerPrefab; } }
@@ -192,6 +193,16 @@ public class GameManager : MonoBehaviour
         
         nb.SetActive(true);
     }
+    private void createTower(int x, int y)
+    {
+        GameObject nobj = (GameObject)GameObject.Instantiate(tower);
+        nobj.transform.position = new Vector2(gridBox.transform.position.x + (gridSize * x), gridBox.transform.position.y + (0.87f * y));
+
+
+        nobj.gameObject.transform.parent = gridBox.transform.parent;
+        cases[x, y] = nobj;
+        nobj.SetActive(true);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -230,10 +241,7 @@ public class GameManager : MonoBehaviour
     {
         if (grid[x, y].IsBlockable != true)
         {
-            Sprite nb = (Sprite)Sprite.Instantiate(TowerPrefab);
-            
-            cases[x, y].GetComponent<SpriteRenderer>().sprite= nb;
-            cases[x, y].GetComponent<Renderer>().material.color = Color.black;
+            createTower(x, y);
             grid[x, y].IsWall = true;
         }
 
