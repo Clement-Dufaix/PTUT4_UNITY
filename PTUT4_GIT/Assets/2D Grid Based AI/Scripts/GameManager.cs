@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 
     public MyPathNode[,] grid;
     public GameObject enemy;
+    public GameObject player;
     [SerializeField]
     private Sprite towerPrefab;
     public Sprite TowerPrefab { get { return towerPrefab; } }
@@ -133,6 +134,7 @@ public class GameManager : MonoBehaviour
 
         //instantiate enemy object
         createEnemy();
+        createPlayer();
 
 
 
@@ -180,7 +182,12 @@ public class GameManager : MonoBehaviour
         nb.SetActive(true);
     }
 
-
+    void createPlayer()
+    {
+        GameObject nb = (GameObject)GameObject.Instantiate(player);
+        
+        nb.SetActive(true);
+    }
     // Update is called once per frame
     void Update()
     {
