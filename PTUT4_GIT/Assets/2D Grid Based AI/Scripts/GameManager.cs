@@ -152,6 +152,10 @@ public class GameManager : MonoBehaviour
         {
             Application.LoadLevel(Application.loadedLevel);
         }
+        if (GUI.Button(new Rect(0f, 120f, 200f, 50f), "Menu"))
+        {
+
+        }
 
     }
 
