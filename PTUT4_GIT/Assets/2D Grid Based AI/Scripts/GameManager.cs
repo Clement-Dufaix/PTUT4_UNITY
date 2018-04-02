@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Sprite towerPrefab;
     public Sprite TowerPrefab { get { return towerPrefab; } }
+    public Sprite whiteCase;
     public GameObject gridBox;
     public int gridWidth;
     public int gridHeight;
@@ -207,7 +208,8 @@ public class GameManager : MonoBehaviour
     {
         if (grid[x, y].IsBlockable != true)
         {
-            //cases[x, y].GetComponent<SpriteRenderer>().sprite = ;
+            Sprite nb = (Sprite)Sprite.Instantiate(whiteCase);
+            cases[x, y].GetComponent<SpriteRenderer>().sprite = nb;
             cases[x, y].GetComponent<Renderer>().material.color = Color.white;
             grid[x, y].IsWall = false;
         }

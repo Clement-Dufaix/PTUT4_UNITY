@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: a80bafa6483f8411e9b66b5001694a8a
-timeCreated: 1522574348
+timeCreated: 1522662157
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
-  - enemy: {fileID: 106530, guid: 41a5cc74d92cf5347b71cef5e76f527f, type: 2}
+  - enemy: {instanceID: 0}
+  - towerPrefab: {fileID: 21300000, guid: efeeb0878e90b2247a4b14a5991c186d, type: 3}
   - gridBox: {instanceID: 0}
   - enemyUp: {fileID: 21300000, guid: 52de9d6f231f2a748860511f804d13ac, type: 3}
   - enemyDown: {fileID: 21300000, guid: 176f5794b4284c84aa67b9be167a335f, type: 3}

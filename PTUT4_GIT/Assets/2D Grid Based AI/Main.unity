@@ -508,6 +508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 68414017}
   towerPrefab: {fileID: 21300000, guid: efeeb0878e90b2247a4b14a5991c186d, type: 3}
+  whiteCase: {fileID: 21300000, guid: b1b6ff1d58967404b9596e0b5f3d5a0c, type: 3}
   gridBox: {fileID: 454430271}
   gridWidth: 18
   gridHeight: 10
