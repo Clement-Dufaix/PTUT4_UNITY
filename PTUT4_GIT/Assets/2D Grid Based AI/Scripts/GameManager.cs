@@ -230,9 +230,8 @@ public class GameManager : MonoBehaviour
     {
         if (grid[x, y].IsBlockable != true)
         {
-            Sprite nb = (Sprite)Sprite.Instantiate(whiteCase);
-            cases[x, y].GetComponent<SpriteRenderer>().sprite = nb;
-            cases[x, y].GetComponent<Renderer>().material.color = Color.white;
+            cases[x, y].name = "Removed";
+            Destroy(cases[x, y]);
             grid[x, y].IsWall = false;
         }
     }
