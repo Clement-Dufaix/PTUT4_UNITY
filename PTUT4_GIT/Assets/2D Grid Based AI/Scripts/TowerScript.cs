@@ -12,4 +12,12 @@ public class TowerScript : MonoBehaviour {
 	void Update () {
 	
 	}
+    void OnMouseDown()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Destroy(transform.parent.gameObject);
+        }
+
+    }
 }

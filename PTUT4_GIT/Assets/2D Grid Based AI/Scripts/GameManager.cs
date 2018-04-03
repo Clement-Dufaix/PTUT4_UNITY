@@ -230,7 +230,6 @@ public class GameManager : MonoBehaviour
     {
         if (grid[x, y].IsBlockable != true)
         {
-            cases[x, y].name = "Removed";
             Destroy(cases[x, y]);
             grid[x, y].IsWall = false;
         }
