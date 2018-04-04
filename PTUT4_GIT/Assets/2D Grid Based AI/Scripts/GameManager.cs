@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using UnityEngine.SceneManagement;
+
 public class GameManager : MonoBehaviour
 {
 
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
     public GameObject enemy;
     public GameObject player;
     public GameObject tower;
+    public GameObject gameOverMenu;
     [SerializeField]
     private Sprite towerPrefab;
     public Sprite TowerPrefab { get { return towerPrefab; } }
@@ -47,6 +50,9 @@ public class GameManager : MonoBehaviour
     public GUIStyle lblStyle;
     public GameObject[,] cases;
     public static string distanceType;
+    
+    private bool gameOver = false;
+    private TowerScript selectedTower;
 
 
     //This is what you need to show in the inspector.
@@ -83,7 +89,7 @@ public class GameManager : MonoBehaviour
         createGrid();
 
         //create base map
-        
+
         addBlockable(0, 3);
         addBlockable(0, 5);
         addBlockable(1, 3);
@@ -101,7 +107,7 @@ public class GameManager : MonoBehaviour
         addBlockable(5, 3);
         addBlockable(5, 5);
         addBlockable(7, 3);
-        
+
         addBlockable(7, 5);
         addBlockable(8, 3);
         addBlockable(8, 5);
@@ -155,6 +161,7 @@ public class GameManager : MonoBehaviour
         }
         if (GUI.Button(new Rect(0f, 120f, 200f, 50f), "Menu"))
         {
+            SceneManager.LoadScene(0);
 
         }
 
@@ -190,7 +197,7 @@ public class GameManager : MonoBehaviour
     void createPlayer()
     {
         GameObject nb = (GameObject)GameObject.Instantiate(player);
-        
+
         nb.SetActive(true);
     }
     private void createTower(int x, int y)
@@ -243,6 +250,32 @@ public class GameManager : MonoBehaviour
             grid[x, y].IsWall = true;
         }
 
+    }
+    public void GameOver()
+    { if (!gameOver)
+        {
+            gameOver = true;
+            GameObject gOM = (GameObject)GameObject.Instantiate(gameOverMenu);
+            gOM.SetActive(true);
+        }
+    }
+    //Fonction pas encore utiliser
+    public void SelectTower(TowerScript tower) {
+
+        if (selectedTower != null)
+        {
+            selectedTower.Select();
+        }
+        selectedTower = tower;
+        selectedTower.Select();
+    }
+    public void DeselectTower()
+    {
+        if (selectedTower != null)
+        {
+            selectedTower.Select();
+        }
+        selectedTower = null;
     }
 
 
