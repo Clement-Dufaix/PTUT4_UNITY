@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     private Sprite towerPrefab;
     public Sprite TowerPrefab { get { return towerPrefab; } }
     public Sprite whiteCase;
+    public List<GameObject> enemies;
     public GameObject gridBox;
     public int gridWidth;
     public int gridHeight;
@@ -61,10 +62,10 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-
+        
         //lock orientation of smartphone
         Screen.orientation = ScreenOrientation.Landscape;
-
+        enemies = new List<GameObject>();
         //Generate a grid - nodes according to the specified size
         grid = new MyPathNode[gridWidth, gridHeight];
 
@@ -192,6 +193,7 @@ public class GameManager : MonoBehaviour
     {
         GameObject nb = (GameObject)GameObject.Instantiate(enemy);
         nb.SetActive(true);
+        enemies.Add(nb);
     }
 
     void createPlayer()
@@ -205,16 +207,11 @@ public class GameManager : MonoBehaviour
         GameObject nobj = (GameObject)GameObject.Instantiate(tower);
         nobj.transform.position = new Vector2(gridBox.transform.position.x + (gridSize * x), gridBox.transform.position.y + (0.87f * y));
 
-
         nobj.gameObject.transform.parent = gridBox.transform.parent;
         cases[x, y] = nobj;
         nobj.SetActive(true);
     }
     // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void addBlockable(int x, int y)
     {

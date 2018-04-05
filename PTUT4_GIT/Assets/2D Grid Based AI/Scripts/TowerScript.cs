@@ -7,6 +7,8 @@ public class TowerScript : MonoBehaviour {
 
     private SpriteRenderer mySpriteRenderer;
     public GameObject enemy;
+    public GameManager game;
+    public float range = 5.0f;
     // Use this for initialization
     void Start () {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
@@ -14,8 +16,16 @@ public class TowerScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-	}
+        //Debug.Log(game.enemies.Count);
+        //foreach (GameObject ennemi in game.enemies)
+        //{
+
+        //    if (Vector3.Distance(ennemi.transform.position, transform.position) <= range)
+        //    {
+        //        Debug.Log(game.enemies.Count);
+        //    }
+        //}
+    }
     void OnMouseDown()
     {
         if (Input.GetMouseButtonDown(0))
